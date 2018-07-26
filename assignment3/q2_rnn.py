@@ -424,15 +424,11 @@ def test_pad_sequences():
     ret_ = pad_sequences(data, 4)
     assert len(ret_) == 2, "Did not process all examples: expected {} results, but got {}.".format(2, len(ret_))
     for i in range(2):
-        assert len(ret_[i]) == 3, "Did not populate return values corrected: expected {} items, but got {}.".format(3,
-                                                                                                                    len(
-                                                                                                                        ret_[
-                                                                                                                            i]))
+        assert len(ret_[i]) == 3, "Did not populate return values corrected: expected {} items, but got {}." \
+            .format(3, len(ret_[i]))
         for j in range(3):
-            assert ret_[i][j] == ret[i][j], "Expected {}, but got {} for {}-th entry of {}-th example".format(ret[i][j],
-                                                                                                              ret_[i][
-                                                                                                                  j], j,
-                                                                                                              i)
+            assert ret_[i][j] == ret[i][j], "Expected {}, but got {} for {}-th entry of {}-th example" \
+                .format(ret[i][j], ret_[i][j], j, i)
 
 
 def do_test1(_):
